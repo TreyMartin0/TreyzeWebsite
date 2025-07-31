@@ -1,8 +1,10 @@
+import Hero from './sections/Hero.jsx';
+
 const App = () => {
   return (
-    <main>
-      <h1>Welcome to my porfolio</h1>
-    </main>
+    <>
+      <Hero />
+    </>
   );
 };
 
