@@ -397,10 +397,11 @@ section {
 }
 .marquee-item {
   float: left;
+  margin-right: 10rem;
 }
 @keyframes marquee {
   0% {
-    left: 0;
+    left: 100%;
   }
   100% {
     left: -100%;
