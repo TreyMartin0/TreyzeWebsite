@@ -7,21 +7,38 @@ Source: https://sketchfab.com/3d-models/hologram-console-bfbbb481e98e4be38774b1d
 Title: Hologram Console
 */
 
-import React from 'react';
+import React, { useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
+import { EffectComposer, SelectiveBloom } from '@react-three/postprocessing';
+import { BlendFunction } from 'postprocessing';
 
 export function Model(props) {
   const { nodes, materials } = useGLTF('/models/hologram_console.glb');
+  const screenRef = useRef();
   return (
     <group {...props} dispose={null}>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={3.489}>
+      <EffectComposer>
+        <SelectiveBloom
+          selection={screenRef}
+          intensity={1.5}
+          luminanceThreshold={0.2}
+          luminanceSmoothing={0.9}
+          blendFunction={BlendFunction.ADD}
+        />
+      </EffectComposer>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={5.489}>
         <group rotation={[Math.PI / 2, 0, 0]}>
           <mesh geometry={nodes.defaultMaterial.geometry} material={materials.MAT_Monitors01} />
           <mesh geometry={nodes.defaultMaterial_1.geometry} material={materials.MAT_Monitors01} />
           <mesh geometry={nodes.defaultMaterial_2.geometry} material={materials.MAT_Monitors01} />
           <mesh geometry={nodes.defaultMaterial_3.geometry} material={materials.MAT_Monitors01} />
-          <mesh geometry={nodes.defaultMaterial_4.geometry} material={materials.MAT_Monitors01} />
+          <mesh
+            ref={screenRef}
+            geometry={nodes.defaultMaterial_4.geometry}
+            material={materials.MAT_Monitors01}
+          />
           <mesh geometry={nodes.defaultMaterial_5.geometry} material={materials.MAT_Monitors01} />
+          <mesh geometry={nodes.defaultMaterial_6.geometry} material={materials.MAT_Monitors01} />
           <mesh geometry={nodes.defaultMaterial_6.geometry} material={materials.MAT_Monitors01} />
           <mesh geometry={nodes.defaultMaterial_7.geometry} material={materials.MAT_Monitors02} />
           <mesh geometry={nodes.defaultMaterial_8.geometry} material={materials.MAT_Monitors01} />
