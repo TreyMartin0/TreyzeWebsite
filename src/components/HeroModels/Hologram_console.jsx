@@ -26,7 +26,7 @@ export function Model(props) {
           blendFunction={BlendFunction.ADD}
         />
       </EffectComposer>
-      <group rotation={[-Math.PI / 2, 0, 0]} scale={5.489}>
+      <group rotation={[-Math.PI / 2, 0, 0]} scale={4.489}>
         <group rotation={[Math.PI / 2, 0, 0]}>
           <mesh geometry={nodes.defaultMaterial.geometry} material={materials.MAT_Monitors01} />
           <mesh geometry={nodes.defaultMaterial_1.geometry} material={materials.MAT_Monitors01} />

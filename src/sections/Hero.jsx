@@ -1,9 +1,18 @@
-import React from 'react';
 import { words } from '../constants/index';
 import Button from '../components/button';
 import HeroExperience from '../components/HeroModels/HeroExperience';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
+import AnimatedCounter from '../components/AnimatedCounter';
 
 const Hero = () => {
+  useGSAP(() => {
+    gsap.fromTo(
+      '.hero-text h1',
+      { y: 50, opacity: 0 },
+      { y: 0, opacity: 1, stagger: 0.5, duration: 1.5, ease: 'power2.inOut' }
+    );
+  });
   return (
     <section id="Hero" className="relative overflow-hidden">
       <div classNme="absolute top-0 left-0 z-10">
@@ -34,7 +43,7 @@ const Hero = () => {
                 </span>
               </h1>
               <h1>CRM Solutions</h1>
-              <h1>Thats Delivers Results</h1>
+              <h1>That Delivers Results</h1>
             </div>
             <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
               Hello, I'm James (Trey) Martin, a developer from West Virginia
@@ -47,8 +56,8 @@ const Hero = () => {
             <HeroExperience />
           </div>
         </figure>
-        {}
       </div>
+      <AnimatedCounter />
     </section>
   );
 };

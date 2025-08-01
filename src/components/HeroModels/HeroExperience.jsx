@@ -21,13 +21,10 @@ const HeroExperience = () => {
         maxPolarAngle={Math.PI / 2}
       />
 
-      <group
-        scale={isMobile ? 0.7 : 1}
-        position={[0, -3.5, 0]}
-        rotation={[0, -Math.PI / 4, 0]}
-      ></group>
-
-      <Model />
+      <group scale={isMobile ? 0.7 : 1} position={[0, 0, 0]} rotation={[0, Math.PI / 1.05, 0]}>
+        {' '}
+        <Model />
+      </group>
     </Canvas>
   );
 };
