@@ -69,12 +69,12 @@ const techStackImgs = [
     imgPath: '/images/logos/python.svg',
   },
   {
-    name: 'Backend Developer',
-    imgPath: '/images/logos/node.png',
+    name: 'Salesforce Developer',
+    imgPath: '/images/logos/SFimage.png',
   },
   {
-    name: 'Interactive Developer',
-    imgPath: '/images/logos/three.png',
+    name: 'Apex Developer',
+    imgPath: '/images/logos/apex-image.png',
   },
   {
     name: 'Project Manager',
