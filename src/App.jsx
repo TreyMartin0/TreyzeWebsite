@@ -5,6 +5,7 @@ import FeatureCards from './sections/FeatureCards.jsx';
 import Experience from './sections/Experience.jsx';
 import Skills from './sections/Skills.jsx';
 import Contact from './sections/Contact.jsx';
+import Footer from './sections/Footer.jsx';
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
       <Experience />
       <Skills />
       <Contact />
+      <Footer />
     </>
   );
 };
